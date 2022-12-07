@@ -4,10 +4,13 @@ set nu
 set nohlsearch
 set hidden
 set noerrorbells
+" 2 spaces tab settings
 set tabstop=2 softtabstop=2
 set shiftwidth=2
+" note sure if these last tow are a part of it
 set expandtab
 set smartindent
+"
 set nowrap
 set ignorecase
 set smartcase
@@ -29,16 +32,16 @@ set nofoldenable                     " Disable folding at startup.
 
 "calling pluggins"
 call plug#begin('C:\Users\olamilekan\AppData\Local\nvim\autoload\plugged')
-Plug 'gruvbox-community/gruvbox'
+" Plug 'gruvbox-community/gruvbox'
 Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw)
-Plug 'https://github.com/preservim/nerdtree' " NerdTree
+" Plug 'https://github.com/preservim/nerdtree' " NerdTree
 Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
 " Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview also TODO
 Plug 'https://github.com/rafi/awesome-vim-colorschemes' " Retro Scheme
 Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
 Plug 'https://github.com/tc50cal/vim-terminal' " Vim Terminal
 Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
-Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
+" Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
 Plug 'folke/tokyonight.nvim', { 'branch': 'main' } " Color scheme
 Plug 'nvim-tree/nvim-web-devicons'                  " optional, for file icons
 Plug 'kyazdani42/nvim-tree.lua'                    " #ff0000 File explorer
@@ -60,13 +63,16 @@ Plug 'nvim-telescope/telescope-fzf-native.nvim', { 'do': 'cmake -S. -Bbuild -DCM
 Plug 'folke/todo-comments.nvim'
 " code completion
 Plug 'hrsh7th/cmp-nvim-lsp'
+Plug 'hrsh7th/cmp-nvim-lua'
 Plug 'hrsh7th/cmp-buffer'
 Plug 'hrsh7th/cmp-path'
 Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
+Plug 'saadparwaiz1/cmp_luasnip'
+Plug 'onsails/lspkind.nvim'
 " For vsnip users.
-Plug 'hrsh7th/cmp-vsnip'
-Plug 'hrsh7th/vim-vsnip'
+" Plug 'hrsh7th/cmp-vsnip'
+" Plug 'hrsh7th/vim-vsnip'
 " autopairs
 Plug 'windwp/nvim-autopairs'
 Plug 'windwp/nvim-ts-autotag'
@@ -85,14 +91,4 @@ highlight LineNr guifg=#aaed9d
 let mapleader = " "
 nnoremap <C-f> :NvimTreeToggle<CR>
 nnoremap <C-p> :Telescope find_files<CR>
-
-fun! TrimWhiteSpace()
-  let l:save = winsaveview()
-  keeppattern %s/\s\+$//e
-  call winrestview(l:save)
-endfun
-
-augroup lk_config
-  autocmd!
-  autocmd BufWritePre * :call TrimWhiteSpace()
-augroup END
+nnoremap <F8> :TagbarToggle<CR>
