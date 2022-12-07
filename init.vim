@@ -35,7 +35,9 @@ call plug#begin('C:\Users\olamilekan\AppData\Local\nvim\autoload\plugged')
 " Plug 'gruvbox-community/gruvbox'
 Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw)
 " Plug 'https://github.com/preservim/nerdtree' " NerdTree
+" commentary
 Plug 'https://github.com/tpope/vim-commentary' " For Commenting gcc & gc
+Plug 'JoosepAlviste/nvim-ts-context-commentstring' " to support vim-commentary
 " Plug 'https://github.com/ap/vim-css-color' " CSS Color Preview also TODO
 Plug 'https://github.com/rafi/awesome-vim-colorschemes' " Retro Scheme
 Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons
@@ -70,9 +72,8 @@ Plug 'hrsh7th/cmp-cmdline'
 Plug 'hrsh7th/nvim-cmp'
 Plug 'saadparwaiz1/cmp_luasnip'
 Plug 'onsails/lspkind.nvim'
-" For vsnip users.
-" Plug 'hrsh7th/cmp-vsnip'
-" Plug 'hrsh7th/vim-vsnip'
+" code snippets
+Plug 'L3MON4D3/LuaSnip', {'tag': 'v<CurrentMajor>.*'}
 " autopairs
 Plug 'windwp/nvim-autopairs'
 Plug 'windwp/nvim-ts-autotag'
